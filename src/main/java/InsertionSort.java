@@ -6,7 +6,12 @@ public class InsertionSort implements SortingStrategy {
     * Importante: seu algoritmo deve ser O(n).
     */
     public void insereUltimoOrdenado(int[] v) {
-        // TODO: implementar
+        int i;
+        int ultimo = v[v.length - 1];
+        for (i = v.length - 2; i >= 0 && v[i] > ultimo; i--) {
+            v[i + 1] = v[i];
+        }
+        v[i + 1] = ultimo;
     }
    
     /**
@@ -16,14 +21,28 @@ public class InsertionSort implements SortingStrategy {
     * Importante: seu algoritmo deve ser O(n);
     */
     public void inserePrimeiroOrdenado(int[] v) {
-        // TODO: implementar
+        int i;
+        int primeiro = v[0];
+        for (i = 1; i < v.length && v[i] < primeiro; i++) {
+            v[i-1] = v[i];
+        }
+        v[i - 1] = primeiro;
     }
 
     /**
     * Ordena um array de inteiros utilizando o insertion sort.
     */
     public void sort(int[] v) {
-        // TODO: implementar
+        for (int i = 0; i < v.length; i++){
+            int chave = v[i];
+            int j = i - 1;
+            while (j >= 0 && v[j] > chave) {
+                v[j + 1] = v[j];
+                j--;
+            }
+            v[j + 1] = chave;
+
+        }
     }
 
     /**
@@ -34,7 +53,19 @@ public class InsertionSort implements SortingStrategy {
     * métodos para te auxiliar na recursão.
     */
     public void sortRecursivo(int[] v) {
-        // TODO: implementar
+        sortRec(v, v.length);
     }  
-
+    private void sortRec(int[] v, int n) {
+        if (n <= 1) {
+            return;
+        }
+        sortRec(v, n - 1);
+        int chave = v[n - 1];
+        int j = n - 2;
+        while (j >= 0 && v[j] > chave) {
+            v[j + 1] = v[j];
+            j--;
+        }
+        v[j + 1] = chave;
+    }
 }
