@@ -4,7 +4,17 @@ public class SelectionSort implements SortingStrategy {
     * Ordena um array de inteiros utilizando o selection sort.
     */
     public void sort(int[] v) {
-        // TODO: implementar
+        for (int i = 0; i < v.length -1; i++) {
+            int indMenor = i;
+            for (int j = i + 1; j < v.length; j++) {
+                if (v[j] < v[indMenor]) {
+                    indMenor = j;
+                }
+            }
+            int temp = v[i];
+            v[i] = v[indMenor];
+            v[indMenor] = temp;
+        }
     }
 
     /**
@@ -15,7 +25,23 @@ public class SelectionSort implements SortingStrategy {
     * métodos para te auxiliar na recursão.
     */
     public void sortRecursivo(int[] v) {
-        // TODO: implementar
+        selectionSortRecursivo(v, 0);
+    }
+    private void selectionSortRecursivo(int[] v, int i) {
+        if (i >= v.length - 1) {
+            return;
+        }
+        int indMenor = i;
+        for (int j = i + 1; j < v.length; j++) {
+            if (v[j] < v[indMenor]) {
+                indMenor = j;
+            }
+        }
+        int temp = v[i];
+        v[i] = v[indMenor];
+        v[indMenor] = temp;
+
+        selectionSortRecursivo(v, i + 1);
     }
     
 }

@@ -50,25 +50,27 @@ Perguntas importantes:
 
 * Qual o pior caso do insertion sort?
 
-> INSIRA SUA RESPOSTA AQUI
+> Quando o array está na ordem reversa.
 
 * Qual o pior caso do selection sort?
 
-> INSIRA SUA RESPOSTA AQUI
+> Quando o array está na ordem reversa.
 
 * Em termos de trocas, como você compararia o insertion sort e o selection sort?
 
-> INSIRA SUA RESPOSTA AQUI
+> O insertion faz mais trocas, por que faz parte do seu algoritmo ir trocando com o vizinho da esquerda até chegar ao seu lugar. Enquanto que o selection troca menos, apenas quando encontra o seu lugar.
 
 * Em termos de comparaçõeas, como você compararia o insertion sort e o selection sort?
 
-> INSIRA SUA RESPOSTA AQUI
+> Agora, o selection faz mais comparações do que o insertion. Porque o seu método é ir comparando até encontrar o lugar para o elemento.
 
 * Mostre com um exemplo concreto que o selection não é estável.
 
-> INSIRA SUA RESPOSTA AQUI
+> No suposto array [1, 3, 2, 4, 2] o algoritmo seguiriia a ordenação colocando o elemento que está na posição 2 do array na posição 1, o que estaria correto, mas ao encontrar o elemento repetido da última posição do array, este seria colocado na posição 2 do array, o que configura uma ordenação não-estável.
 
 * O insertion é estável? Argumente com um exemplo concreto.
+
+> Sim. No array hipotético [1, 3, 2, 4, 2]. O algoritmo só troca elementos quando encontra algum maior, não um igual.
 
 ## Mais estudo
 
